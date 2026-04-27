@@ -327,7 +327,7 @@ footer {
 }
 
 /* Suporte para orientação landscape em mobile */
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 768px) {
     .image-container {
         /*height: 250px;*/
         height: 650px;

@@ -38,16 +38,16 @@ if (imagenes.length > 0) {
     startCarousel();
     
     // Pausar carrusel em dispositivos móveis quando o usuário interage
-    const imageContainer = document.querySelector('.image-container');
-    if (imageContainer) {
-        imageContainer.addEventListener('touchstart', () => {
-            stopCarousel();
-            // Reiniciar após 10 segundos sem interação
-            setTimeout(() => {
-                if (!intervalId) startCarousel();
-            }, 10000);
-        });
-    }
+    //const imageContainer = document.querySelector('.image-container');
+    //if (imageContainer) {
+    //    imageContainer.addEventListener('touchstart', () => {
+    //        stopCarousel();
+     //       // Reiniciar após 10 segundos sem interação
+     //       setTimeout(() => {
+     //           if (!intervalId) startCarousel();
+     //       }, 10000);
+     //   });
+    //}
 }
 
 // Otimização para dispositivos móveis - reduzir animações se preferir
