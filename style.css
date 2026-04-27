@@ -1,0 +1,343 @@
+:root {
+    --primary: #0a2342;    /* Azul Marino Corporativo */
+    --accent: #c5a059;     /* Dorado Elegante */
+    --light: #fff8ea;      /* Fondo suave */
+    --text: #333333;
+    --whatsapp: #25D366;
+}
+
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 16px; 
+}
+
+/* Header Responsive */
+header {
+    text-align: center;
+    padding: 20px 0 30px;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 30px;
+}
+
+.logo-principal {
+    width: min(120px, 25vw);
+    height: auto;
+    border: 3px solid var(--primary);
+    border-radius: 50%;
+    padding: 8px;
+    background-color: rgb(240, 240, 240);
+    object-fit: contain;
+}
+
+.brand-placeholder {
+    font-size: clamp(1.8rem, 8vw, 3rem);
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 1px;
+    margin: 10px 0;
+}
+
+h1 {
+    font-size: clamp(1.3rem, 6vw, 2.5rem);
+    color: var(--primary);
+    text-transform: uppercase;
+    line-height: 1.3;
+    padding: 0 10px;
+}
+
+.tagline {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+    color: #666;
+    margin-top: 8px;
+    padding: 0 15px;
+}
+
+/* Content Layout */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Tablet e Desktop */
+@media (min-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .content {
+        flex-direction: row;
+        gap: 40px;
+        align-items: flex-start;
+    }
+    
+    .info { 
+        flex: 1.5; 
+        min-width: 300px;
+    }
+    
+    .image-container { 
+        flex: 1;
+        position: sticky;
+        top: 20px;
+    }
+}
+
+.info {
+    min-width: 0;
+    width: 100%;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    color: var(--primary);
+    margin: 20px 0 12px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+
+/* Benefits Section */
+.benefits {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin: 20px 0;
+}
+
+.benefits h3 {
+    font-size: clamp(1.1rem, 4.5vw, 1.3rem);
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.benefits-list {
+    list-style: none;
+}
+
+.benefits-list li {
+    margin-bottom: 12px;
+    padding-left: 25px;
+    position: relative;
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+}
+
+.benefits-list li:before {
+    content: "→";
+    position: absolute; 
+    left: 0; 
+    color: var(--accent); 
+    font-weight: bold;
+}
+
+/* Requirements Grid */
+.req-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.req-item {
+    background: var(--primary);
+    color: white;
+    padding: 10px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: clamp(0.8rem, 3.5vw, 0.9rem);
+    gap: 8px;
+}
+
+.req-item i { 
+    color: var(--accent); 
+    font-size: 1.1rem;
+    min-width: 20px;
+}
+
+/* WhatsApp Button */
+.whatsapp-button-container {
+    margin-top: 20px;
+}
+
+.whatsapp-button {
+    background-color: var(--whatsapp);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: clamp(0.9rem, 4vw, 1.3rem);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    width: 100%;
+    max-width: 350px;
+    gap: 8px;
+}
+
+.whatsapp-button i {
+    font-size: 1.2em;
+}
+
+.whatsapp-button:active {
+    transform: scale(0.98);
+}
+
+@media (min-width: 768px) {
+    .whatsapp-button {
+        width: auto;
+        padding: 20px 40px;
+    }
+    
+    .whatsapp-button:hover { 
+        transform: scale(1.05); 
+        background-color: #128c7e; 
+    }
+}
+
+.cta-subtext { 
+    margin-top: 10px; 
+    font-size: clamp(0.75rem, 3vw, 0.9rem); 
+    color: #555; 
+}
+
+/* Image Carousel */
+.image-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 3px solid white;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 480px) {
+    .image-container {
+        height: 400px;
+    }
+}
+
+@media (min-width: 768px) {
+    .image-container {
+        height: 500px;
+        border-radius: 20px;
+        border: 5px solid white;
+    }
+}
+
+@media (min-width: 1024px) {
+    .image-container {
+        height: 600px;
+    }
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.img-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.img-item.active {
+    opacity: 1;
+}
+
+/* Animações */
+.escondido { 
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+
+.revelar { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 30px 20px 20px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    font-size: clamp(0.7rem, 3vw, 0.85rem);
+    color: #666;
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 380px) {
+    .container {
+        padding: 12px;
+    }
+    
+    .req-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .benefits {
+        padding: 15px;
+    }
+    
+    .image-container {
+        height: 250px;
+    }
+}
+
+/* Melhorias de touch para mobile */
+@media (max-width: 768px) {
+    .req-item, 
+    .whatsapp-button {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .req-item:active {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+}
+
+/* Suporte para orientação landscape em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .image-container {
+        height: 250px;
+        /*height: 650px;*/
+    }
+    
+    header {
+        padding: 15px 0 20px;
+    }
+    
+    .benefits {
+        margin: 10px 0;
+    }
+}
